@@ -6,6 +6,7 @@ import {Link as LinkS} from 'react-scroll'
 export const Nav = styled.nav`
   background: #000;
   height: 80px;
+  margin-top: -80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,7 +31,7 @@ max-width: 1100px;
 `
 
 export const NavLogo = styled(LinkR)`
-color: #fff;
+color: #01bf71;
 justify-self: flex-start;
 cursor: pointer;
 font-size: 1.5rem;
@@ -38,20 +39,25 @@ display: flex;
 align-items: center;
 font-weight: bold;
 text-decoration: none;
+
+&:hover {
+  color: #fff;
+}
 `
 
 export const MobileIcon = styled.div`
 display: none;
 
 @media screen and (max-width:768px) {
-    display: block;
+    display: flex;
     position: absolute;
-    top: 0;
+    top: 6%;
     right: 0;
+    align-items: center;
     transform: translate(-100%, 60%);
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     cursor: pointer;
-    color: red;
+    color: #01bf71;
     }
 `
 
@@ -73,7 +79,7 @@ height:80px;
 `
 
 export const NavLinks = styled(LinkS)`
-color: #fff;
+color: #01bf71;
 display: flex;
 align-items: center;
 text-decoration: none;
@@ -81,8 +87,11 @@ padding: 0 1rem;
 height: 100%;
 cursor: pointer;
 
+&:hover {
+  color: #fff;
+}
 &.active {
-    border-bottom: 3x solid #01bf71;
+    border-bottom: 3px solid #01bf71;
 }
 `
 
@@ -111,7 +120,7 @@ text-decoration: none;
 
 &:hover {
   transition: all 0.2s ease-in-out;
-  background: #fff;
-  color: #010606;
+  background: #01bf71;
+  color: #fff;
 }
 `

@@ -29,10 +29,13 @@ const HeroSection = () => {
             <HeroContent>
                 <HeroH1>Quality Pet Care for all!</HeroH1>
                 <HeroP>
-                    Sign up today and receive 50% off your first service appointment with us!
+                    Sign up today and schedule your free consulation!
                 </HeroP>
                 <HeroBtnWrapper>
-                    <Button to="signup" onMouseEnter={onHover} onMouseLeave={onHover}
+                    <Button 
+                    to="signup" 
+                    onMouseEnter={onHover} 
+                    onMouseLeave={onHover}
                     primary='true'
                     dark='true'
                     >

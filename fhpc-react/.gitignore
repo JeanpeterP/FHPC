@@ -1,3 +1,4 @@
 /fhpc-react/node_modules
+/fhpc-react/src/videos
 # eslint cache
 .eslintcache
