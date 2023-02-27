@@ -4,9 +4,9 @@ import DoggyLogo from '../../images/gooddoggy.svg'
 export const HomeObjOne = {
     id: 'about',
     lightBg: false,
-    lightText: true,
+    lightText: false,
     lightTextDesc: true,
-    topLine: 'Premium Pet Care',
+    datopLine: 'Premium Pet Care',
     headline: 'Amazing pet care service',
     description: 'Get amazing pet care and access to our exclusiveg app which allows you to schedule appointments and more',
     buttonLabel: 'Get started',

@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
-from accounts.models import Pet, Account
-
+from accounts.models import Account
+from pets.models import Pet
 # Create your models here.
 
 class Appointments(models.Model):

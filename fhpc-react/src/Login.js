@@ -14,6 +14,7 @@ function LoginInput(props) {
 export default function LoginForm(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
     const { setIsLoggedIn } = props;
   
     const handleUsernameChange = (event) => {
@@ -41,6 +42,8 @@ export default function LoginForm(props) {
         const accessToken = Cookies.get('access_token');
         setIsLoggedIn(true);
         Cookies.set('accessToken', data.access);
+        setIsAuthenticated(true);
+        Cookies.set('isLoggedIn', 'true')
     }
 
     return (

@@ -2,7 +2,8 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_http_methods
 import json
-from accounts.models import Pet
+from pets.models import Pet
+#from accounts.models import Pet
 from .models import Appointments
 from .common.encoders import AppointmentSerializer
 from django.contrib.auth.hashers import check_password

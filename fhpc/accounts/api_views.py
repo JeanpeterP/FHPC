@@ -2,8 +2,9 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_http_methods
 import json
-from .models import Account, Pet
-from .common.encoders import PetSerializer, AccountSerializer
+from .models import Account
+from pets.models import Pet
+from .common.encoders import PetSerializer, AccountSerializer, AccountSerializerWPassword
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
@@ -49,7 +50,7 @@ class AccountListApiView(APIView):
     
 
     def post(self, request):
-        serializer = AccountSerializer(data=request.data)
+        serializer = AccountSerializerWPassword(data=request.data)
         if serializer.is_valid():
             # Validate password
             password = serializer.validated_data['password']

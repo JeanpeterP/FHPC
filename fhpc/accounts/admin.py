@@ -2,7 +2,8 @@ from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
 from django import forms
-from .models import Account, Pet
+from .models import Account
+from pets.models import Pet
 
 User = get_user_model()
 # Register your models here.
@@ -31,16 +32,3 @@ class AccountAdmin(UserAdmin):
 
 admin.site.register(Account, AccountAdmin)
 
-class PetAdmin(admin.ModelAdmin):
-    model = Pet
-    list_display = (
-        'pet_number',
-        'name',
-        'breed',
-        'age',
-        'weight',
-        'owner'
-    )
-
-        
-admin.site.register(Pet, PetAdmin)

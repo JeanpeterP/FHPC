@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     "corsheaders",
+    "pets.apps.PetsConfig",
     "accounts.apps.AccountsConfig",
     "contact.apps.ContactConfig",
     "appointments.apps.AppointmentsConfig",

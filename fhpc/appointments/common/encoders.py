@@ -1,7 +1,8 @@
 from .json import ModelEncoder
 from appointments.models import Appointments
 from rest_framework import serializers
-from accounts.models import Account, Pet
+from accounts.models import Account
+from pets.models import Pet
 
 class AppointmentEncoder(ModelEncoder):
     model = Appointments
@@ -10,7 +11,8 @@ class AppointmentEncoder(ModelEncoder):
 class AccountSerializer(serializers.ModelSerializer):
     class Meta:
         model = Account
-        fields = ["pk", "username", "email", "password", "first_name", "last_name"]
+        fields = ["pk", "username", "email", "first_name", "last_name"]
+
 
 class PetSerializer(serializers.ModelSerializer):
     owner = AccountSerializer(many=False)

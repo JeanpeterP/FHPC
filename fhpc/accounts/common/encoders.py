@@ -1,5 +1,6 @@
 from .json import ModelEncoder
-from accounts.models import Account, Pet
+from accounts.models import Account
+from pets.models import Pet
 from rest_framework import serializers
 
 class AccountDetailEncoder(ModelEncoder):
@@ -8,9 +9,14 @@ class AccountDetailEncoder(ModelEncoder):
 
 class AccountEncoder(ModelEncoder):
     model = Account
-    properties = ["username", "email", "password", "first_name", "last_name"]
+    properties = ["username", "email", "first_name", "last_name"]
 
 class AccountSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Account
+        fields = ["pk", "username", "email", "first_name", "last_name"]
+
+class AccountSerializerWPassword(serializers.ModelSerializer):
     class Meta:
         model = Account
         fields = ["pk", "username", "email", "password", "first_name", "last_name"]
