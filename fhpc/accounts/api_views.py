@@ -62,7 +62,9 @@ class AccountListApiView(APIView):
                 email=serializer.validated_data['email'],
                 password=password,
                 first_name=serializer.validated_data['first_name'],
-                last_name=serializer.validated_data['last_name']
+                last_name=serializer.validated_data['last_name'],
+                zipcode=serializer.validated_data["zipcode"],
+                phone_number=serializer.validated_data["phone_number"],
             )
 
             return Response(

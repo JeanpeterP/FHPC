@@ -5,8 +5,10 @@ import LoginForm from '../Login'
 import AccountForm from '../AccountForm'
 import HeroSection from '../components/HeroSection'
 import InfoSection from '../components/InfoSection'
-import { HomeObjOne } from '../components/InfoSection/Data'
+import { HomeObjOne, HomeObjThree, HomeObjTwo } from '../components/InfoSection/Data'
 import Cookies from 'js-cookie';
+import Services from '../components/Services'
+import Footer from '../components/Footer'
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -36,8 +38,12 @@ const Home = () => {
         <Navbar isLoggedIn={isLoggedIn} handleLogout={handleLogout} toggle={toggle}/>
         <HeroSection />
         <InfoSection {...HomeObjOne}/>
+        <InfoSection {...HomeObjTwo}/>
+        <Services/>
+        <InfoSection {...HomeObjThree}/>
         <AccountForm />
         <LoginForm setIsLoggedIn={setIsLoggedIn}/>
+        <Footer/>
     </>
   )
 }
