@@ -20,7 +20,7 @@ class AccountAdmin(UserAdmin):
         'first_name',
         'last_name',
         'is_staff',
-        'zip_code',
+        'zipcode',
         'display_pets'
     )
     filter_horizontal = ('groups', 'user_permissions')

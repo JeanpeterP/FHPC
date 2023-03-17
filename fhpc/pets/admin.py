@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib import admin
-from .models import Pet, PetHealth, Diet, Food, Treat, FoodServing, TreatServing
+from .models import Pet, PetHealth, BehavioralQuirks, Medications, Food, FoodAllergy, Treat, FoodServing, TreatServing
 # Register your models here.
 from django.utils import timezone
 
@@ -34,21 +34,36 @@ class TreatServingForm(forms.ModelForm):
         label='Number of Portions'
     )
 
+class AllergiesForm(forms.ModelForm):
+    class Meta:
+        model = FoodAllergy
+        fields = '__all__'
+
+class BehavioralQuirksForm(forms.ModelForm):
+    class Meta:
+        model = BehavioralQuirks
+        fields = '__all__'
+
+class MedicationsForm(forms.ModelForm):
+    class Meta:
+        model = FoodAllergy
+        fields = '__all__'
+
 class PetHealthForm(forms.ModelForm):
     class Meta:
         model = PetHealth
         fields = '__all__'
 
-    diet = forms.ModelChoiceField(
-        queryset=Diet.objects.all(),
-        required=True,
-        label='Diet'
-    )
-    date = forms.DateField(
-        required=True,
-        label='Date',
-        help_text='Enter date in YYYY-MM-DD format'
-    )
+    # diet = forms.ModelChoiceField(
+    #     queryset=Diet.objects.all(),
+    #     required=True,
+    #     label='Diet'
+    # )
+    # date = forms.DateField(
+    #     required=True,
+    #     label='Date',
+    #     help_text='Enter date in YYYY-MM-DD format'
+    # )
 
 class FoodServingInline(admin.TabularInline):
     model = FoodServing
@@ -88,6 +103,8 @@ class PetAdmin(admin.ModelAdmin):
     inlines = [PetHealthInline, FoodServingInline, TreatServingInline]
     
 admin.site.register(Pet, PetAdmin)
-admin.site.register(Diet)
+admin.site.register(BehavioralQuirks)
+admin.site.register(Medications)
+admin.site.register(FoodAllergy)
 admin.site.register(Food)
 admin.site.register(Treat)

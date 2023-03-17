@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
                 ('is_active', models.BooleanField(default=True, help_text='Designates whether this user should be treated as active. Unselect this instead of deleting accounts.', verbose_name='active')),
                 ('date_joined', models.DateTimeField(default=django.utils.timezone.now, verbose_name='date joined')),
                 ('account_number', models.PositiveIntegerField(unique=True)),
-                ('zip_code', models.CharField(max_length=15)),
+                ('zipcode', models.CharField(max_length=15)),
                 ('groups', models.ManyToManyField(blank=True, related_name='accounts_groups', to='auth.group')),
                 ('user_permissions', models.ManyToManyField(blank=True, related_name='account_user_permissions', to='auth.permission')),
             ],

@@ -5,7 +5,7 @@ from rest_framework import serializers
 
 class AccountDetailEncoder(ModelEncoder):
     model = Account
-    properties = ["username", "email", "first_name", "last_name", "is_staff", "zip_code"]
+    properties = ["username", "email", "first_name", "last_name", "is_staff", "zipcode"]
 
 class AccountEncoder(ModelEncoder):
     model = Account
@@ -19,7 +19,7 @@ class AccountSerializer(serializers.ModelSerializer):
 class AccountSerializerWPassword(serializers.ModelSerializer):
     class Meta:
         model = Account
-        fields = ["pk", "username", "email", "password", "first_name", "last_name"]
+        fields = ["pk", "username", "email", "password", "first_name", "last_name", "zipcode", "phone_number"]
 
 class PetSerializer(serializers.ModelSerializer):
     owner = AccountSerializer(many=False)

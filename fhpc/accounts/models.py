@@ -7,7 +7,8 @@ import random
 
 class Account(AbstractUser):
     account_number = models.PositiveIntegerField(unique=True)
-    zip_code = models.CharField(max_length=15)
+    phone_number = models.CharField(max_length=15)
+    zipcode = models.CharField(max_length=5)
     user_permissions = models.ManyToManyField(
         Permission,
         blank=True,

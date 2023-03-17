@@ -11,13 +11,12 @@ import {
     NavBtn,
     NavBtnLink
 } from './NavbarElements';
-
 const Navbar = ({ isLoggedIn, handleLogout, toggle }) => {
     return (
       <>
         <Nav>
           <NavbarContainer>
-            <NavLogo to="/">Dollarrr</NavLogo>
+            <NavLogo to="/">FHPC</NavLogo>
             <MobileIcon onClick={toggle}>
               <FaBars />
             </MobileIcon>
@@ -26,11 +25,14 @@ const Navbar = ({ isLoggedIn, handleLogout, toggle }) => {
                 <NavLinks to="about">About</NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks to="services">Services</NavLinks>
+                <NavLinks to="Discover">Discover</NavLinks>
               </NavItem>
+              <NavItem>
+                <NavLinks to="Services">Services</NavLinks>
+              </NavItem>  
               {isLoggedIn ? (
               <NavItem>
-                <NavLinks to="signup">Appoitments</NavLinks>
+                <NavLinks to="Services">My Profile</NavLinks>
               </NavItem>              
               ) : (
               <NavItem>
